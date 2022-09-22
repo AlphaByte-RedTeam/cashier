@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/txtTitle"
+        android:id="@+id/txtTitleStruk"
         android:layout_width="375dp"
         android:layout_height="71dp"
         android:fontFamily="cursive"
@@ -37,7 +37,7 @@
         tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
-        android:id="@+id/txtNama"
+        android:id="@+id/editNamaStruk"
         android:layout_width="59dp"
         android:layout_height="31dp"
         android:layout_marginStart="65dp"
@@ -49,10 +49,10 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/editNama"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/txtTitleStruk" />
 
     <EditText
-        android:id="@+id/editHarga"
+        android:id="@+id/editHargaStruk"
         android:layout_width="155dp"
         android:layout_height="48dp"
         android:layout_marginTop="19dp"
@@ -80,7 +80,7 @@
         tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
-        android:id="@+id/txtTotal"
+        android:id="@+id/editTotalStruk"
         android:layout_width="61dp"
         android:layout_height="29dp"
         android:layout_marginStart="65dp"
@@ -92,17 +92,17 @@
         app:layout_constraintEnd_toStartOf="@+id/editTotal"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtJumlah" />
+        app:layout_constraintTop_toBottomOf="@+id/editQuantityStruk" />
 
     <Button
         android:id="@+id/btnHitung"
         android:layout_width="92dp"
         android:layout_height="48dp"
-        android:layout_marginTop="206dp"
+        android:layout_marginTop="232dp"
         android:layout_marginEnd="4dp"
         android:text="@string/hitung"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/txtTitleStruk" />
 
     <EditText
         android:id="@+id/editBayar"
@@ -119,7 +119,7 @@
         tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
-        android:id="@+id/txtBayar"
+        android:id="@+id/editBayarStruk"
         android:layout_width="61dp"
         android:layout_height="29dp"
         android:layout_marginStart="65dp"
@@ -131,7 +131,7 @@
         app:layout_constraintEnd_toStartOf="@+id/editBayar"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtTotal" />
+        app:layout_constraintTop_toBottomOf="@+id/editTotalStruk" />
 
     <EditText
         android:id="@+id/editJumlah"
@@ -144,11 +144,11 @@
         android:inputType="textPersonName"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editHarga"
+        app:layout_constraintTop_toBottomOf="@+id/editHargaStruk"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
-        android:id="@+id/txtJumlah"
+        android:id="@+id/editQuantityStruk"
         android:layout_width="61dp"
         android:layout_height="29dp"
         android:layout_marginStart="65dp"
@@ -172,10 +172,10 @@
         android:text="@string/harga"
         android:textColor="#052AF8"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/editHarga"
+        app:layout_constraintEnd_toStartOf="@+id/editHargaStruk"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtNama" />
+        app:layout_constraintTop_toBottomOf="@+id/editNamaStruk" />
 
     <TextView
         android:id="@+id/txtSubTitle"
@@ -189,7 +189,7 @@
         android:textStyle="bold|italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/txtTitleStruk" />
 
     <Button
         android:id="@+id/btnClear"

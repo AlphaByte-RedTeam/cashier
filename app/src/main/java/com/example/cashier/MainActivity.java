@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         EditText nama = findViewById(R.id.editNama);
-        EditText harga = findViewById(R.id.editHarga);
+        EditText harga = findViewById(R.id.editHargaStruk);
         EditText jumlah = findViewById(R.id.editJumlah);
         EditText total = findViewById(R.id.editTotal);
         EditText bayar = findViewById(R.id.editBayar);
@@ -58,12 +58,12 @@ public class MainActivity extends AppCompatActivity {
                 String bayarStr = bayar.getText().toString();
 
                 Bundle bundle = new Bundle();
-//                bundle.putString("NAMA", namaStr);
-//                bundle.putString("HARGA", hargaStr);
-//                bundle.putString("JUMLAH", jumlahStr);
-//                bundle.putString("TOTAL", totalStr);
-//                bundle.putString("BAYAR", bayarStr);
-//                passData.putExtras(bundle);
+                bundle.putString("NAMA", namaStr);
+                bundle.putString("HARGA", hargaStr);
+                bundle.putString("JUMLAH", jumlahStr);
+                bundle.putString("TOTAL", totalStr);
+                bundle.putString("BAYAR", bayarStr);
+                passData.putExtras(bundle);
                 startActivity(passData);
             }
         });
@@ -75,30 +75,6 @@ public class MainActivity extends AppCompatActivity {
             total.getText().clear();
             bayar.getText().clear();
         });
-
-//      proses.setOnClickListener(view1 -> {
-//          if (nama.length()==0 || harga.length()==0 || jumlah.length()==0 || total.length()==0 || bayar.length()==0)
-//              Toast.makeText(getApplication(), "Isi Semua Field!", Toast.LENGTH_LONG).show();
-//          else {
-//              String n, h, j, t, b;
-//              n = nama.getText().toString();
-//              h = harga.getText().toString();
-//              j = jumlah.getText().toString();
-//              t = total.getText().toString();
-//              b = bayar.getText().toString();
-//
-//              Intent intent = new Intent(this, StrukActivity.class);
-//              Bundle bundle = new Bundle();
-//              bundle.putString("NAMA", n);
-//              bundle.putString("HARGA", h);
-//              bundle.putString("JUMLAH", j);
-//              bundle.putString("TOTAL", t);
-//              bundle.putString("BAYAR", b);
-//              intent.putExtras(bundle);
-//              startActivity(intent);
-//          }
-//      });
-//    });
     }
 
 }

@@ -9,49 +9,50 @@ import android.widget.EditText;
 
 public class StrukActivity extends AppCompatActivity {
 
-    EditText j, n, h, t, b, k;
-    Button quit;
-    double dj, dh, hasil;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_struk);
 
-        j = findViewById(R.id.txtJumlah);
-        n = findViewById(R.id.txtNama);
-        h = findViewById(R.id.editHarga);
-        t = findViewById(R.id.txtTotal);
-        b = findViewById(R.id.txtBayar);
-        k = findViewById(R.id.txtKembali);
+        EditText editQuantity = findViewById(R.id.editQuantityStruk);
+        EditText editNama = findViewById(R.id.editNamaStruk);
+        EditText editHarga = findViewById(R.id.editHargaStruk);
+        EditText editTotal = findViewById(R.id.editTotalStruk);
+        EditText editBayar = findViewById(R.id.editBayarStruk);
+        EditText editKembali = findViewById(R.id.editKembaliStruk);
+        Button quit = findViewById(R.id.btnQuitStruk);
 
-        Intent intent = getIntent();
-        Bundle bundle = intent.getExtras();
+        Intent receiveData = getIntent();
+        Bundle bundle = receiveData.getExtras();
 
-        String in = bundle.getString("NAMA");
-        String ij = bundle.getString("JUMLAH");
-        String ih = bundle.getString("HARGA");
-        String it = bundle.getString("TOTAL");
-        String ib = bundle.getString("BAYAR");
+        String quantityStr = bundle.getString("JUMLAH");
+        String namaStr = bundle.getString("NAMA");
+        String hargaStr = bundle.getString("HARGA");
+        String totalStr = bundle.getString("TOTAL");
+        String bayarStr = bundle.getString("BAYAR");
 
-        j.setText(ij);
-        n.setText(in);
-        h.setText(ih);
-        t.setText(it);
-        b.setText(ib);
+        if (bundle != null) {
+            editQuantity.setText(quantityStr);
+            editNama.setText(namaStr);
+            editHarga.setText(hargaStr);
+            editTotal.setText(totalStr);
+            editBayar.setText(bayarStr);
 
-        dj = Double.parseDouble(ij);
-        dh = Double.parseDouble(ih);
-        hasil = dj * dh;
+            double totalDbl = Double.parseDouble(editTotal.getText().toString());
+            double bayarDbl = Double.parseDouble(editBayar.getText().toString());
+            double hasil = bayarDbl - totalDbl;
+            String hasilStr = String.valueOf(hasil);
 
-        k.setText(String.valueOf(hasil));
+            editKembali.setText(hasilStr);
+        }
 
         quit.setOnClickListener(view -> {
-            Intent quitIntent = new Intent(this, MainActivity.class);
-            quitIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-            quitIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            quitIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            startActivity(quitIntent);
+            Intent back = new Intent(this, MainActivity.class);
+            back.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            back.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            back.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(back);
         });
+
     }
 }
