@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">cashier</string>
+    <string name="kasir_indoapril">Kasir IndoApril</string>
+    <string name="nama">NAMA</string>
+    <string name="total">TOTAL</string>
+    <string name="proses">PROSES</string>
+    <string name="clear">CLEAR</string>
+    <string name="hitung">hitung</string>
+    <string name="bayar">BAYAR</string>
+    <string name="jumlah">JUMLAH</string>
+    <string name="harga">HARGA</string>
+    <string name="barang">*BARANG*</string>
+</resources>
